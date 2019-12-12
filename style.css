@@ -13,3 +13,24 @@
     top: 5px;
     right: 15px;
 }
+.app-quiz {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    visibility: hidden;
+}
+.app-quizOff {
+    visibility: hidden;
+}
+.app-quizOn {
+    visibility: visible;
+}
+.buttons {
+    width: 60%;
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
