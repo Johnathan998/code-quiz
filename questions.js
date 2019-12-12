@@ -47,3 +47,49 @@ function populate() {
         }
     }
 };
+function guess(id, guess) {
+    var button = document.getElementById(id);
+    button.onclick = function () {
+        quiz.guess(guess);
+        populate();
+    }
+};
+function showScores() {
+    var gameOverHTML = "<h1>Result</h1>";
+    gameOverHTML += "<h2 id='score'> Your score: " + quiz.score + "</h2>";
+    var element = document.getElementById("quiz");
+    element.innerHTML = gameOverHTML;
+};
+
+function startTimer() {
+    function startTimer() {
+        setTime();
+        interval = setInterval(function () {
+            secondsElapsed++;
+            renderTime();
+        }, 1000);
+    }
+    var timeleft = 45;
+    var downloadTimer = setInterval(function () {
+        document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
+        timeleft -= 1;
+        if (timeleft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById("timer").innerHTML = "Finished"
+
+        }
+    }, 1000);
+    showQuiz();
+}
+function showQuiz() {
+    const quiz = document.querySelector(".app-quiz");
+    quiz.classList.add("app-quizOn")
+}
+var questions = [
+    new Question("Commonly used data types DO NOT include:", ["strings", "booleans", "alerts", "numbers"], "alerts"),
+    new Question("The condition in an if / else statement is enclosed within ____.", ["quotes", "curly brackets", "parentheses", "square brackets"], "parentheses"),
+    new Question("In JavaScript, what is a block of code called that is used to perform a specific task?", ["string", "variable", "function", "declaration"], "function"),
+];
+var quiz = new Quiz(questions);
+startButton.addEventListener("click", startTimer);
+populate();
