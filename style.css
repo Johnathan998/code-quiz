@@ -1,0 +1,15 @@
+.app-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 400px;
+    flex-direction: column;
+}
+.app-timer {
+    position: fixed;
+    top: 5px;
+    right: 15px;
+}
